@@ -52,12 +52,16 @@ public class MealController {
     }
 
     @GetMapping("/hello")
-    public String greetWorld(){
+    public String helloWorld(){
         return "Hello World";
     }
-    @GetMapping("/hello")
-    public ResponseEntity<String> greetWorldResponse(){
+    @GetMapping("/helloResponse")
+    public ResponseEntity<String> helloWorldResponse(){
         return ResponseEntity.ok().body("Hello World");
+    }
+    @GetMapping("/helloGreeting")
+    public ResponseEntity<String> greeting(){
+        return ResponseEntity.ok().body("Good Afternoon");
     }
 
 
