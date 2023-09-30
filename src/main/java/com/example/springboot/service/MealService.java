@@ -39,6 +39,8 @@ public class MealService {
     public void updateMeal(Meal meal) {
         mealDao.save(meal);
     }
+    public void getMeal(String name){ mealDao.findByName(name);};
+    public void getDescription(String description){mealDao.findByName(description);}
 
     public List<Meal> getSummerMeals() {
         Double currentTemperatureInCentigrade = getCurrentTemperatureInCentigrade();

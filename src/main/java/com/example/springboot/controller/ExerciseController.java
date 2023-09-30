@@ -11,12 +11,31 @@ import java.util.Random;
 @RestController
 public class ExerciseController {
     private Integer timeOfDay;
-        @GetMapping(value = "/info")
-        public ResponseEntity<String> index() {
 
-            return new ResponseEntity<>(HttpStatus.OK);
+    //The first controller - Postman, requests
+    //Exercise 1
+    @GetMapping("/hello")
+    public String helloWorld(){
+        return "Hello World";
+    }
+    @GetMapping("/helloResponse")
+    public ResponseEntity<String> helloWorldResponse(){
+        return ResponseEntity.ok().body("Hello World");
+    }
+    //Exercise 2
+    @GetMapping("/helloGreeting")
+    public ResponseEntity<String> greeting(){
+        return ResponseEntity.ok().body("Good Afternoon");
+    }
+
+    //Exercise 3
+    @GetMapping(value = "/info")
+    public ResponseEntity<String> index() {
+
+        return new ResponseEntity<>(HttpStatus.OK);
 
     }
+    //Exercise 4
     @GetMapping("/random")
     ResponseEntity<String> randomTries(){
 
@@ -25,7 +44,6 @@ public class ExerciseController {
                     "False choice",
                     HttpStatus.BAD_REQUEST);
         }
-
         return new ResponseEntity<>(
                 "True Choice" ,
                 HttpStatus.OK);
