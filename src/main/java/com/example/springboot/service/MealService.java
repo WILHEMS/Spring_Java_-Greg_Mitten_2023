@@ -41,6 +41,9 @@ public class MealService {
     }
     public void getMeal(String name){ mealDao.findByName(name);};
     public void getDescription(String description){mealDao.findByName(description);}
+    public void deleteMealName(String name){mealDao.deleteMealByName(name);}
+    public void deleteMealPrice(double price){mealDao.deleteMealsByPriceGreaterThan(price);}
+    public void updateMealPrice(String name, double price){mealDao.updateMealPriceByName(name,price);}
 
     public List<Meal> getSummerMeals() {
         Double currentTemperatureInCentigrade = getCurrentTemperatureInCentigrade();
