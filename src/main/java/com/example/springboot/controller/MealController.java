@@ -54,4 +54,10 @@ public class MealController {
         return ResponseEntity.ok("2 + 2 = 4");
     }
 
+    @GetMapping("/hello")
+    public ResponseEntity<String> greetWorld(){
+        return ResponseEntity.ok().body("Hello World");
+    }
+
+
 }
